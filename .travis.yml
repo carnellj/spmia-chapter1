@@ -23,4 +23,5 @@ script:
 - cd $TEST_DIR
 - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 - mvn clean package docker:build
+- echo "DOCKER IMAGE $TMX_DOCKER_IMAGE"
 - docker push $TMX_DOCKER_IMAGE
