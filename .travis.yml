@@ -21,4 +21,6 @@ env:
   matrix:
     - TEST_DIR=chapter1-code
 script:
-  - mvn clean package
+- docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+- mvn clean package docker:build
+- docker push $TMX_DOCKER_IMAGE
