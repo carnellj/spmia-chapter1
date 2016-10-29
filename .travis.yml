@@ -22,4 +22,4 @@ env:
 script:
 - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 - mvn clean package docker:build
-- docker push $TMX_DOCKER_IMAGE
+- docker push johncarnell/tmx-simple-service:chapter1
