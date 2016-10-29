@@ -20,6 +20,7 @@ env:
   matrix:
   - TEST_DIR=chapter1-code;TMX_DOCKER_IMAGE=johncarnell/tmx-simple-service:chapter1
 script:
+- cd $TEST_DIR
 - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 - mvn clean package docker:build
 - docker push $TMX_DOCKER_IMAGE
