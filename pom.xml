@@ -38,14 +38,35 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
       </plugin>
-
+      <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>copy-resources</id>
+            <!-- here the phase you need -->
+            <phase>validate</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${basedir}/target/dockerfile</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>src/main/docker</directory>
+                  <filtering>true</filtering>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
       <plugin>
         <groupId>com.spotify</groupId>
         <artifactId>docker-maven-plugin</artifactId>
-        <version>0.2.3</version>
+        <version>0.4.10</version>
         <configuration>
           <imageName>${docker.image.name}:${docker.image.tag}</imageName>
-          <dockerDirectory>src/main/docker</dockerDirectory>
+          <dockerDirectory>${basedir}/target/dockerfile</dockerDirectory>
           <resources>
             <resource>
               <targetPath>/</targetPath>
