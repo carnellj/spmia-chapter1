@@ -13,6 +13,9 @@ notifications:
   - carnell28@gmail.com
   on_success: always
   on_failure: always
+before_install:
+  - sudo curl -o /usr/local/bin/ecs-cli https://s3.amazonaws.com/amazon-ecs-cli/ecs-cli-darwin-amd64-latest
+  - sudo chmod +x /usr/local/bin/ecs-cli
 env:
   global:
   - secure: da8h8K0dKEeVrk+3zO8r9GEv6LqK+23QKZBshsQjyhsu2AT9O6/6EWGbS5mGqTnPPJLqCsEkSEOEUG7BlgCV0gQM7TkvMKGK0DgIJ4usydj2LHNuVMi95BebDUIjUZu0JZmTtjqD92PCUUJ8eRO6765l1gmaU8x9MEdaWWkBHlA96cuJuJLNY8/7el56nj+gofGXsfQUcPMc70It7nArerBCSeQLlT5c69HrMx8znT9cqa0gbjzsoCBs/0VpDE7HqnuQDafoDhQZGoOYf3W2Ubk75mt7F+V0w40HPeJXZFVUZvoihr6yfArypk6S4wZYm19IEi8coZfHosjX1k6IOiQYvXEImyxjyn5VzxEcf5JxRQA1QWjCeNUk1alGKVJYl5cKxeIir2HzHwSQc+4NJIcnL62BiwKJjHUHGBfrujMhl1euhDDv8QWZIFmLm3nIjNeuJJPUh9UL8+xH1wdMe75+ObHtQLfwsDJuzs5/zmErZ3RIl7JJAYTy9QXE8S3sbPs+Bgf7NpUu9FWenNXddz176raVIDXsPaayQ+Y5GX+X/zQz+5Xl0rbTdL7pUst2xSkKEogawLq9zHab021PmwR5IJ+GJG5TTH5zvpHQDbzT//PfCC2HWnzqbcNVdYuH2L9AH6JVMitywdZbFKhyWj+w+IQpS4ddefHX7UoYyoY=
@@ -23,6 +26,6 @@ script:
 - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 - mvn clean package docker:build
 - docker push $TMX_DOCKER_IMAGE
-- echo "About to execute docker machine"
-- docker-machine ls
-- echo "Done with docker machine"
+- echo "About to execute amazon ecs"
+- ecs-cli --version
+- echo "Done with amazon ecs"
