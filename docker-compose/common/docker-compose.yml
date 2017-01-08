@@ -1,4 +1,6 @@
-simpleservice:
-    image: johncarnell/tmx-simple-service:chapter1
-    ports:
-      - "8080:8080"
+version: '2'
+services:
+  simpleservice:
+      image: johncarnell/tmx-simple-service:chapter1
+      ports:
+        - "8080:8080"

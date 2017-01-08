@@ -26,6 +26,4 @@ script:
 - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 - mvn clean package docker:build
 - docker push $TMX_DOCKER_IMAGE
-- echo "About to execute ecs"
 - ecs-cli --version
-- echo "Done with ecs"
