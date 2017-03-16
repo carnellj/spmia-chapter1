@@ -4,7 +4,6 @@ Welcome to Spring Microservices in Action, Chapter 1.  Chapter 1 is an introduct
 # Software needed
 1.	Apache Maven (http://apache.maven.org). I used version 3.3.9 of the Maven. I chose Maven because, while other build tools like Gradle are extremely popular, Maven is still the pre-dominate build tool in use in the Java ecosystem. All of the code examples in this book have been compiled with Java version 1.8.
 2.	Docker (http://docker.com). I built the code examples in this book using Docker V1.12 and above. I am taking advantage of the embedded DNS server in Docker that came out in release V1.11. New Docker releases are constantly coming out so it is releases change every few minuts..
-
 Note: I originally wrote all of the code examples in the book using Docker Machine and the version 1 style of using links between Docker containers. I would highly recommend you switch to native Docker if you are currently using Docker Machine. Native Docker is much more lightweight then Docker Machine and the networking capabilities are for more advanced.
 3.	Git Client (http://git-scm.com). All of the source code for this book is stored in a GitHub repository. For the book, I used version 2.8.4 of the git client.
 
