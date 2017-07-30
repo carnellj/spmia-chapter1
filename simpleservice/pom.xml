@@ -38,6 +38,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
       </plugin>
+      <!--This is the new spotify plugin-->
       <plugin>
         <groupId>com.spotify</groupId>
         <artifactId>dockerfile-maven-plugin</artifactId>
@@ -56,8 +57,8 @@
               <goal>tag</goal>
             </goals>
             <configuration>
-              <repository>johncarnell/tmx-simple-service</repository>
-              <tag>chapter1</tag>
+              <repository>${docker.image.name}</repository>
+              <tag>${docker.image.tag}</tag>
             </configuration>
           </execution>
         </executions>
