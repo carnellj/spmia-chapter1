@@ -24,6 +24,6 @@ env:
   - TMX_DOCKER_IMAGE=johncarnell/tmx-simple-service:chapter1
 script:
 - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-- mvn clean package docker:build
+- mvn clean package
 - docker push $TMX_DOCKER_IMAGE
 - ecs-cli --version
