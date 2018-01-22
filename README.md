@@ -11,7 +11,7 @@ To build the code examples for Chapter 1 as a docker image, open a command-line 
 
 Run the following maven command.  This command will execute the [Spotify docker plugin](https://github.com/spotify/docker-maven-plugin) defined in the pom.xml file.  
 
-   **mvn clean package docker:build**
+   **mvn clean package**
 
 If everything builds successfully you should see a message indicating that the build was successful.
 
