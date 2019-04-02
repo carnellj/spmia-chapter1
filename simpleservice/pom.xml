@@ -26,7 +26,6 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <java.version>1.8</java.version>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <start-class>com.thoughtmechanix.simpleservice.Application</start-class>
     <docker.image.name>johncarnell/tmx-simple-service</docker.image.name>
     <docker.image.tag>chapter1</docker.image.tag>
